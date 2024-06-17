@@ -1,0 +1,43 @@
+---
+- hosts: ws
+  become: 1
+  gather_facts: 1
+  ignore_errors: true
+  vars_files:
+    - variables.yml
+  vars:
+    user_name: kobby2024
+    group: terraform
+
+  tasks:
+    - name: check server uptime
+      command: "{{my_command}}"
+      register: uptime_output
+      tags:
+        - system_uptime
+    - name: list directory
+      shell: ls
+      tags:
+        - sys_listfiles
+    - name: check kernel version
+      command: uname -r
+      register: kernel_output
+      tags:
+        - sys_kernel_check
+    - name: create user name
+      user:
+        name: "{{user_name}}"
+      tags:
+        - create_file
+    - name: create group
+      group:
+        name: "{{group}}"
+      tags:
+        - create group
+    - name: read data
+      debug:
+        # msg: "Hello Ansible World!"
+        var: kernel_output.stdout
+    - name: read uptime data
+      debug:
+        var: uptime_output.stdout
