@@ -14,7 +14,7 @@ pipeline{
                 "http://ec2-18-204-7-164.compute-1.amazonaws.com:8081/artifactory/ansible-repo/ansible-${BUILD_ID}.zip"'
             }
         }
-        stage('Publish to ansible server'){
+        stage('Publish to Ansible Server'){
             steps{
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'AnsibleServer', transfers: [sshTransfer(cleanRemote: \
                 false, excludes: '', execCommand: 'ls', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: \
