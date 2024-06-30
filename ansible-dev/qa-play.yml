@@ -4,10 +4,10 @@
   become_user: root
   gather_facts: 1
   ignore_errors: yes
-  
+
   tasks:
     - name: Install Packages
-    yum:
+      yum:
       state: present
       name: 
         - docker
@@ -18,18 +18,18 @@
         - java-11*
 
     - name: Create Directory
-    file:
+      file:
       path: /opt/qa/spg
       state: directory
       mode: '0755'
 
     - name: Create File
-    file:
+      file:
       path: /opt/qa/spg/spg.log
       state: touch
 
     - name: Start and enable Daemon
-    systemd:
+      systemd:
       name: docker
       state: started
       enabled: yes
