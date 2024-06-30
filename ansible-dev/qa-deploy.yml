@@ -17,7 +17,7 @@
         - a
       register: pid_output
 
-    -name: Print pid_out
+    - name: Print pid_out
       debug:
         var: pid_output
       tags:
