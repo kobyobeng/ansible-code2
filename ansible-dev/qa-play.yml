@@ -8,8 +8,8 @@
   tasks:
     - name: Install Packages
       yum:
-      state: present
-      name: 
+        state: present
+        name: 
         - docker
         - wget
         - lsof
@@ -19,17 +19,17 @@
 
     - name: Create Directory
       file:
-      path: /opt/qa/spg
-      state: directory
-      mode: '0755'
+        path: /opt/qa/spg
+        state: directory
+        mode: '0755'
 
     - name: Create File
       file:
-      path: /opt/qa/spg/spg.log
-      state: touch
+        path: /opt/qa/spg/spg.log
+        state: touch
 
     - name: Start and enable Daemon
       systemd:
-      name: docker
-      state: started
-      enabled: yes
+        name: docker
+        state: started
+        enabled: yes
