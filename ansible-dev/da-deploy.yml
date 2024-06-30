@@ -12,7 +12,7 @@
         state: absent
 
     - name: Get the PID
-      shell: 8082: lsof -i :8082
+      shell: lsof -i :8082
       register: pid_output
 
     - name: Kill Running App
