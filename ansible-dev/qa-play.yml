@@ -22,7 +22,7 @@ tasks:
       state: directory
       mode: '0755'
 
-  - name: Create file
+  - name: Create File
     file:
       path: /opt/qa/spg/spg.log
       state: touch
