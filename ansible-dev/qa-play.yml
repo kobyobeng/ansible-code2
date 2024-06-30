@@ -1,10 +1,10 @@
 ---
 - host: ws
-become: 1
-become_user: root
-gather_facts: 1
-ignore_errors: yes
-tasks:
+  become: 1
+  become_user: root
+  gather_facts: 1
+  ignore_errors: yes
+  tasks:
   - name: Install Packages
     yum:
       state: present
@@ -28,7 +28,7 @@ tasks:
       state: touch
 
   - name: Start and enable Daemon
-    systemd_service:
+    systemd:
       name: docker
       state: started
       enabled: yes
