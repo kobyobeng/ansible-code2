@@ -13,11 +13,11 @@
 
     - name: Get the PID
       shell: lsof -i :8082
+      register: pid_output
       tags:
         - a
-      register: pid_output
-
-    - name: Print pid_out
+     
+    - name: Read data
       debug:
         var: pid_output
       tags:
