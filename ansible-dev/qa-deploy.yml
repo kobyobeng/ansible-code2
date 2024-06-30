@@ -24,7 +24,7 @@
         url: http://34.201.161.49:8081/artifactory/geolocation/geo/bio_17.jar
         destination: /opt/qa/spg
         url_username: admin
-        url_password: devops
+        url_password: password
 
     - name: Run the App
       shell: nohup java -jar /opt/qa/spg/*.jar > /opt/qa/spg.log 2>&1 &                                                                                        
