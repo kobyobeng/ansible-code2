@@ -1,5 +1,5 @@
 ---
-- host: ws
+- hosts: ws
   become: 1
   become_user: root
   gather_facts: 1
