@@ -22,7 +22,7 @@
     - name: Download New Artifact
       get_url: 
         url: http://34.201.161.49:8081/artifactory/geolocation/geo/bio_17.jar
-        destination: /opt/qa/spg
+        dest: /opt/qa/spg
         url_username: admin
         url_password: password
 
