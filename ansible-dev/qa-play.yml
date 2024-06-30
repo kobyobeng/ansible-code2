@@ -22,7 +22,7 @@ tasks:
       state: directory
       mode: '0755'
 
-  - name: Create File
+  - name: Create file
     file:
       path: /opt/qa/spg/spg.log
       state: touch
@@ -32,4 +32,3 @@ tasks:
       name: docker
       state: started
       enabled: yes
-      
